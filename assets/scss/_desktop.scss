@@ -1,0 +1,130 @@
+@use "mixins" as *;
+@use "variables" as *;
+@include desktopview(700px) {
+  .navlinks-container {
+    width: 50%;
+  }
+  .icon-card-section,
+  .article-section {
+    padding-inline: 20%;
+  }
+}
+
+@include desktopview(750px) {
+  nav {
+    .buttons {
+      button {
+        position: initial;
+      }
+      .hamburger-btn {
+        position: absolute;
+        top: -100%;
+      }
+    }
+    .navlinks-container {
+      position: initial;
+      height: auto;
+      transform: translate(0, 0);
+      flex-direction: row;
+      flex-basis: 40%;
+    }
+  }
+  .nav-overlay.open {
+    animation-name: reverse-expand;
+    animation-direction: reverse;
+    animation-duration: 1.5s;
+  }
+  .hero-section {
+    flex-direction: row-reverse;
+    background-image: url("../images/bg-intro-desktop.svg");
+    justify-content: space-around;
+    background-size: 60%;
+    width: 90%;
+    // background:blue;
+    margin-left: 10%;
+    // overflow-x: hidden;
+    padding: 5rem 0;
+
+    gap: auto;
+
+    .hero-image {
+      width: 90%;
+      img {
+        position: absolute;
+        align-self: start;
+        top: 7%;
+        right: -5%;
+        // width: 90%;
+        transform: scale(1.15);
+      }
+    }
+    .hero-text {
+      text-align: left;
+      //   justify-self: start;
+      margin-top: 5%;
+      max-width: 35%;
+      //   margin-right:25%;
+    }
+  }
+  h2 {
+    text-align: left;
+  }
+  .icon-card-section,
+  .article-section {
+    padding-inline: 2%;
+  }
+  .card-container {
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 3rem;
+    .card {
+      text-align: left;
+    }
+  }
+  .icon-card-section {
+    p {
+      width: 50%;
+    }
+    .card-container {
+      .card {
+        padding-inline: 2%;
+        p {
+          width: initial;
+        }
+      }
+    }
+  }
+  footer {
+    .container {
+      flex-direction: row;
+      width: 90%;
+      margin: auto;
+      justify-content: space-between;
+      .links {
+        flex-direction: row;
+        justify-content: space-between;
+        flex-basis: 30%;
+      }
+    }
+  }
+}
+@include desktopview(900px) {
+  .hero-section {
+    .hero-image {
+      img {
+        top: 5%;
+        right: 2%;
+        // width: 90%;
+        transform: scale(1.6);
+      }
+    }
+  }
+}
+// @include desktopview(750px) {
+// }
+//   .card-container {
+//     flex-wrap: wrap;
+//     .card {
+//       flex-basis: 150px;
+//     }
+//   }
