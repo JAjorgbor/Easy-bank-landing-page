@@ -1,10 +1,11 @@
 @use "mixins" as *;
 @use "variables" as *;
+
 nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.5rem;
+  padding: 0.5rem 5%;
   position: fixed;
   top: 0;
   width: 100%;
@@ -19,9 +20,8 @@ nav {
     .hamburger-btn {
       width: 2.3rem;
       height: 2.3rem;
-      // background-color: red;
       padding: 0.5rem 0;
-      transition:1s;
+      transition: 1s;
       cursor: pointer;
       div {
         height: 1px;
@@ -45,9 +45,7 @@ nav {
     transform: translateY(9px) rotate(-45deg);
   }
   div:nth-child(2) {
-    // transform:translateX(-100%);
     opacity: 0;
-    // margin-block: 10px;
   }
   div:nth-child(3) {
     transform: translateY(-9px) rotate(45deg);
@@ -71,7 +69,6 @@ nav {
   transition: 0.8s ease-in-out;
   a {
     color: $darkBlue;
-    // transition: color 0.5s;
   }
 
   a::after {
@@ -106,10 +103,12 @@ nav {
   padding: 0;
   top: -100%;
   transform: scale(0.025);
-  transition:1s;
+  transition: 1s;
   background-image: linear-gradient(
-    to bottom,$darkBlue,fade-out($brightCyan,0.8))
-  ;
+    to bottom,
+    $darkBlue,
+    fade-out($brightCyan, 0.8)
+  );
   z-index: 5;
 }
 .nav-overlay.open {

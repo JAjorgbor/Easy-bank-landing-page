@@ -5,13 +5,17 @@
 *::before {
   box-sizing: border-box;
 }
+html{
+  scroll-behavior:smooth;
+}
 body {
   margin: 0;
   padding: 0;
-  // scroll-behavior: smooth;
-  overflow-x: hidden;
-  font-family: "Public Sans", sans-serif;
-  color:$lightGray;
+   overflow-x: hidden;
+   font-family: "Public Sans", sans-serif;
+   color:$lightGray;
+   max-width:$pageWidth;
+   margin:auto;
 }
  a {
   text-decoration: none;
@@ -21,7 +25,6 @@ body {
 .page-wrapper {
   position: relative;
   overflow-x: hidden !important;
-  scroll-behavior: smooth ;
   height: 100%;
   width: 100%;
   margin: 0;
@@ -291,5 +294,80 @@ footer {
         transform:scale(0);
       }
     }
+  }
+}
+.attribution-container {
+  width: 50px;
+  cursor: pointer;
+  border-radius: 50%;
+  height: 50px;
+
+  position: fixed;
+  bottom: 2%;
+  right: 2%;
+}
+.profile-pic-container {
+  overflow: hidden;
+  width: inherit;
+  height: inherit;
+  border-radius: inherit;
+  img {
+    height: 65px;
+    width: 100%;
+    border-radius: 10%;
+    position: relative;
+    top: -30%;
+  }
+}
+.attribution {
+  font-size: 1em;
+  position: absolute;
+  height: 110px;
+  border-radius: 10px;
+  padding: 1rem;
+  top: -200%;
+  left: -480%;
+  line-height: 1.5em;
+  color: $white;
+ background-image: $gradient;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  transform: scale(0, 0);
+  transform-origin: bottom right;
+  .icons {
+    text-align: center;
+    margin-top: 0.8rem;
+    margin-block-start: 0.8rem;
+    font-size: 1.2em;
+    letter-spacing: 0.2em;
+  }
+
+  a {
+    text-decoration: none;
+    font-weight: 700;
+    color:rgb(18, 121, 255);
+    -webkit-transition: color 0.3s ease-in-out;
+    -moz-transition: color 0.3s ease-in-out;
+    -ms-transition: color 0.3s ease-in-out;
+    -o-transition: color 0.3s ease-in-out;
+    transition: color 0.3s ease-in-out;
+  }
+  a:hover {
+    color: blue;
+  }
+}
+.attribution-container:hover {
+  box-shadow: 0 10px 50px #ec8225;
+  -webkit-box-shadow: 0 10px 50px #ec8225;
+  -moz-box-shadow: 0 10px 50px #ec8225;
+  .profile-pic-container {
+    opacity: 0.9;
+  }
+  .attribution {
+    top: -230%;
+    transform: scale(1);
   }
 }

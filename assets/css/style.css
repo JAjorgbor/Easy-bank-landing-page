@@ -3,7 +3,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.5rem;
+  padding: 0.5rem 5%;
   position: fixed;
   top: 0;
   width: 100%;
@@ -158,12 +158,18 @@ nav .buttons .hamburger-btn div:not(:nth-child(1)) {
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
   font-family: "Public Sans", sans-serif;
   color: hsl(233, 8%, 62%);
+  max-width: 1500px;
+  margin: auto;
 }
 
 a {
@@ -175,7 +181,6 @@ a {
 .page-wrapper {
   position: relative;
   overflow-x: hidden !important;
-  scroll-behavior: smooth;
   height: 100%;
   width: 100%;
   margin: 0;
@@ -445,6 +450,83 @@ footer .other > a::after {
   transform: scale(0);
 }
 
+.attribution-container {
+  width: 50px;
+  cursor: pointer;
+  border-radius: 50%;
+  height: 50px;
+  position: fixed;
+  bottom: 2%;
+  right: 2%;
+}
+
+.profile-pic-container {
+  overflow: hidden;
+  width: inherit;
+  height: inherit;
+  border-radius: inherit;
+}
+.profile-pic-container img {
+  height: 65px;
+  width: 100%;
+  border-radius: 10%;
+  position: relative;
+  top: -30%;
+}
+
+.attribution {
+  font-size: 1em;
+  position: absolute;
+  height: 110px;
+  border-radius: 10px;
+  padding: 1rem;
+  top: -200%;
+  left: -480%;
+  line-height: 1.5em;
+  color: hsl(0, 0%, 100%);
+  background-image: linear-gradient(45deg, hsl(136, 65%, 51%) 50%, hsl(192, 70%, 51%));
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  transform: scale(0, 0);
+  transform-origin: bottom right;
+}
+.attribution .icons {
+  text-align: center;
+  margin-top: 0.8rem;
+  margin-block-start: 0.8rem;
+  font-size: 1.2em;
+  letter-spacing: 0.2em;
+}
+.attribution a {
+  text-decoration: none;
+  font-weight: 700;
+  color: rgb(18, 121, 255);
+  -webkit-transition: color 0.3s ease-in-out;
+  -moz-transition: color 0.3s ease-in-out;
+  -ms-transition: color 0.3s ease-in-out;
+  -o-transition: color 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out;
+}
+.attribution a:hover {
+  color: blue;
+}
+
+.attribution-container:hover {
+  box-shadow: 0 10px 50px #ec8225;
+  -webkit-box-shadow: 0 10px 50px #ec8225;
+  -moz-box-shadow: 0 10px 50px #ec8225;
+}
+.attribution-container:hover .profile-pic-container {
+  opacity: 0.9;
+}
+.attribution-container:hover .attribution {
+  top: -230%;
+  transform: scale(1);
+}
+
 @media screen and (min-width: 700px) {
   .navlinks-container {
     width: 50%;
@@ -504,7 +586,7 @@ footer .other > a::after {
   }
   .icon-card-section,
   .article-section {
-    padding-inline: 2%;
+    padding-inline: 5%;
   }
   .card-container {
     flex-direction: row;

@@ -40,11 +40,8 @@
     justify-content: space-around;
     background-size: 60%;
     width: 90%;
-    // background:blue;
     margin-left: 10%;
-    // overflow-x: hidden;
     padding: 5rem 0;
-
     gap: auto;
 
     .hero-image {
@@ -54,16 +51,13 @@
         align-self: start;
         top: 7%;
         right: -5%;
-        // width: 90%;
         transform: scale(1.15);
       }
     }
     .hero-text {
       text-align: left;
-      //   justify-self: start;
       margin-top: 5%;
       max-width: 35%;
-      //   margin-right:25%;
     }
   }
   h2 {
@@ -71,7 +65,7 @@
   }
   .icon-card-section,
   .article-section {
-    padding-inline: 2%;
+    padding-inline: 5%;
   }
   .card-container {
     flex-direction: row;
@@ -114,17 +108,8 @@
       img {
         top: 5%;
         right: 2%;
-        // width: 90%;
         transform: scale(1.6);
       }
     }
   }
 }
-// @include desktopview(750px) {
-// }
-//   .card-container {
-//     flex-wrap: wrap;
-//     .card {
-//       flex-basis: 150px;
-//     }
-//   }
