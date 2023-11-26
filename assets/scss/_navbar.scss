@@ -1,0 +1,126 @@
+@use "mixins" as *;
+@use "variables" as *;
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 5%;
+    position: absolute;
+
+    top: 0;
+    width: 100%;
+    z-index: 10;
+    background-color: $white;
+    box-shadow: 0 1px 10px $darkBlue;
+    .buttons {
+        button {
+            position: absolute;
+            top: -150%;
+        }
+        .hamburger-btn {
+            width: 2.3rem;
+            height: 2.3rem;
+            padding: 0.5rem 0;
+            transition: 1s;
+            cursor: pointer;
+            div {
+                height: 1px;
+                background-color: black;
+                transition:
+                    transform 0.5s,
+                    opacity 1s,
+                    margin 0.2s;
+            }
+            div:not(:nth-child(1)) {
+                margin-top: 0.5rem;
+            }
+        }
+    }
+}
+.hamburger-btn:not(.clicked):hover {
+    div:nth-child(2) {
+        margin-block: 10px;
+    }
+}
+.hamburger-btn.clicked {
+    transform: rotate(-360deg);
+    div:nth-child(1) {
+        transform: translateY(9px) rotate(-45deg);
+    }
+    div:nth-child(2) {
+        opacity: 0;
+    }
+    div:nth-child(3) {
+        transform: translateY(-9px) rotate(45deg);
+    }
+}
+.navlinks-container {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1rem 0;
+    top: 250px;
+    left: 150%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    overflow: hidden;
+    height: 20rem;
+    border-radius: 5px;
+    background-color: white;
+    transition: 0.8s ease-in-out;
+    a {
+        color: $darkBlue;
+    }
+
+    a::after {
+        content: "";
+        width: 100%;
+        height: 3px;
+        background-image: $gradient;
+        display: block;
+        border-radius: 5px;
+        transform: scale(0, 1);
+        margin-top: 0.5rem;
+        transition: transform 0.5s ease-in-out;
+    }
+    a:hover {
+        color: $limeGreen;
+        &::after {
+            transform: scale(1);
+        }
+    }
+}
+
+.navlinks-container.appear {
+    left: 50%;
+    transition-delay: 0.8s;
+    transition-duration: 0.5s;
+}
+.nav-overlay {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    padding: 0;
+    top: -100%;
+    transform: scale(0.025);
+    transition: 1s;
+    background-image: linear-gradient(to bottom, $darkBlue, fade-out($brightCyan, 0.8));
+    z-index: 5;
+}
+.nav-overlay.open {
+    animation-name: expand;
+    animation-fill-mode: forwards;
+    animation-duration: 1s;
+}
+.nav-overlay.close {
+    animation-name: reverse-expand;
+    animation-direction: reverse;
+    animation-fill-mode: forwards;
+    animation-duration: 1.5s;
+}
+@include overlayAnimation(expand);
+@include overlayAnimation(reverse-expand);
